@@ -9,7 +9,7 @@ const About = () => {
           ABOUT <span className="">TEAM 13</span>
         </h2>
         <p className="py-3 text-center">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui amet
+          Lorem xD ipsum dolor, sit amet consectetur adipisicing elit. Qui amet
           quam dolorum deserunt ad unde veniam nisi necessitatibus doloribus!
           Eligendi!
         </p>
