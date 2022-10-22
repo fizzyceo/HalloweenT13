@@ -1,26 +1,238 @@
-html,
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Butcherman&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: #db6724;
+  --first-color-alt: #ca5f21;
+  --white-color: #fff;
+  --text-color: #c2bfbd;
+  --text-color-light: #918b88;
+  --body-color: #110f0e;
+  --container-color: #131110;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --second-font: 'Butcherman', cursive;
+
+  --biggest-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--white-color);
+}
+
+ul {
+  list-style: none;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1024px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1.5rem;
+}
+.texts {
+  letter-spacing: 0.2rem;
+}
+.texts h1,
+.texts span {
+  font-family: var(--second-font);
+  color: var(--first-color);
+  line-height: 2.5rem;
+}
+.section__title {
+  font-size: var(--h1-font-size);
+  font-family: var(--second-font);
+  font-weight: initial;
+  line-height: 130%;
+  color: var(--first-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+/* Shapes */
+.shape__bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
+}
+
+.shape__small,
+.shape__big {
+  position: absolute;
+  background-color: var(--first-color);
+  filter: blur(96px);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.shape__small {
+  width: 150px;
+  height: 150px;
+}
+
+.shape__big {
+  width: 250px;
+  height: 250px;
+  opacity: 0.8;
+}
+
+/*=============== HEADER & NAV ===============*/
+.nav__list {
+  font-family: 'Butcherman', cursive;
+  display: flex;
+  flex-direction: row;
+  column-gap: 6rem;
+  padding-right: 5rem;
+}
+.nav__item {
+  font-size: 18px;
+  transition: color 0.4s;
+}
+.nav__item:hover {
+  color: #db6724;
+}
+.nav__menu {
+  position: flex;
+}
+.toggle,
+.close {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+
+    left: 0;
+    background: linear-gradient(
+      to right,
+      rgb(147, 102, 73),
+      var(--body-color) 60%
+    );
+    width: 100%;
+    box-shadow: 0 4px 8px rgb(46, 41, 41);
+
+    transition: top 0.4s;
   }
-  body {
-    color: white;
-    background: black;
+  .toggle,
+  .close {
+    display: block;
+  }
+  .nav__list {
+    flex-direction: column;
+    text-align: center;
+    padding-right: 0rem;
   }
 }
+/* Show menu */
+
+/* Change background header */
+
+/* Active link */
+
+/*=============== HOME ===============*/
+
+/* Star animation */
+
+/*=============== BUTTON ===============*/
+
+/*=============== CATEGORY ===============*/
+
+/*=============== ABOUT ===============*/
+
+/*=============== ITEMS ===============*/
+
+/*=============== PARTY ===============*/
+
+/*=============== FOOTER ===============*/
+
+/*=============== SCROLL BAR ===============*/
+
+/*=============== SCROLL UP ===============*/
+
+/* Show Scroll Up*/
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+/* For medium devices */
+
+/* For large devices */
+
+/* For 2K resolutions (2048 x 1152) */
