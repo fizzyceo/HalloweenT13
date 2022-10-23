@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 const Section = ({ children }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  console.log(isInView);
   return (
     <section className="mt-32" ref={ref}>
       <div

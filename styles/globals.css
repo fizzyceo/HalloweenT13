@@ -109,6 +109,12 @@ img {
   color: var(--first-color);
   line-height: 2.5rem;
 }
+.title {
+  font-family: 'Caveat Brush', cursive;
+}
+.text01 {
+  font-size: 25px;
+}
 .section__title {
   font-size: var(--h1-font-size);
   font-family: var(--second-font);
