@@ -69,13 +69,13 @@ export default function Home() {
         <Navbar selectedMenu={selectedMenu} />
       </header>
       <main className="bg-grey">
-        <Section>
+        <Section setSelectedMenu={setSelectedMenu} index="home">
           <Homepage />
         </Section>
-        <Section>
+        <Section setSelectedMenu={setSelectedMenu} index="about">
           <About />
         </Section>
-        <Section>
+        <Section index="plan" setSelectedMenu={setSelectedMenu}>
           <Plan />
         </Section>
       </main>

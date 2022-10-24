@@ -2,7 +2,7 @@ import React from 'react';
 
 const Homepage = () => {
   return (
-    <div className="mx-3">
+    <div id="home" className="mx-3">
       <div className="home__container relative flex flex-col items-center justify-center gap-5">
         <div className="shape_small absolute bottom-7 right-3 lg:bottom-16 lg:right-32  rounded-full w-[200px] blur-[90px] bg-[#ca5f21] h-[200px]"></div>
         <div className="shape_big  absolute top-10 lg:left-10 left-0 rounded-full w-[300px] blur-[96px] bg-[#ca5f21] h-[300px]"></div>
@@ -12,7 +12,7 @@ const Homepage = () => {
             <h1 className="  py-2">HALLOWEEN</h1>
             <h2>
               {' '}
-              TREAT OR <span className="">Code!</span>{' '}
+              TRICK OR <span className="">Code!</span>{' '}
             </h2>
             <img
               src="img/stars.png"
@@ -26,15 +26,20 @@ const Homepage = () => {
             />
           </div>
           <p className="py-3 text-center">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
-            rerum placeat doloribus in amet corrupti est enim doloremque quasi
-            ut!
+            At the welcoming of fall, a halloween themed tech development event
+            was organized to bring in together designers, game dev and AI
+            enthusiasts to show off their skills through tech challenges and
+            learn about some fundamentals in python and AI through coding
+            workshops and precise talks.
           </p>
         </div>
         <div className="z-10 flex flex-col items-center gap-5">
-          <button className="rounded-full  hover:text-[#fff] font-bold transition-all hover:bg-[#ca5f21] w-fit px-7  py-2 bg-[#fff] text-[#ca5f21]">
+          <a
+            href="#about"
+            className="rounded-full  hover:text-[#fff] font-bold transition-all hover:bg-[#ca5f21] w-fit px-7  py-2 bg-[#fff] text-[#ca5f21]"
+          >
             Explore Now!
-          </button>
+          </a>
           <img
             src="img/home-pumpkin.png"
             alt=""

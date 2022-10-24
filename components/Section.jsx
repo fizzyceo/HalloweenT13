@@ -1,12 +1,18 @@
 import { useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 
-const Section = ({ children }) => {
+const Section = ({ children, index, setSelectedMenu }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  console.log(isInView);
+  if (isInView) {
+    console.log(index);
+    setSelectedMenu(index);
+  } else {
+    setSelectedMenu('');
+  }
+
   return (
-    <section className="mt-32" ref={ref}>
+    <section id="" className="mt-32" ref={ref}>
       <div
         style={{
           transform: isInView ? 'none' : 'translateX(-200px)',

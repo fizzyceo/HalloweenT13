@@ -55,7 +55,7 @@ const Navbar = ({ selectedMenu }) => {
 
           <li
             className={`nav__item ${
-              selectedMenu === 'challenges' && 'text-[#ca5f21]'
+              selectedMenu === 'plan' && 'text-[#ca5f21]'
             }`}
           >
             <a className="" href="#challenges">

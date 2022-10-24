@@ -3,11 +3,15 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import MapPoint from './MapPoint';
 import Svggroup from './Svggroup';
+import { useEffect } from 'react';
+import { useState } from 'react';
+
 const Plan = () => {
   const ref1 = useRef(null);
   const isInView1 = useInView(ref1, { once: true });
   const ref2 = useRef(null);
   const isInView2 = useInView(ref2, { once: true });
+  const path1 = useRef();
   const pathVariants = {
     hidden: {
       opacity: 0.5,
@@ -18,8 +22,8 @@ const Plan = () => {
       pathLength: 1,
 
       transition: {
-        duration: 10,
-        ease: 'easeIn',
+        duration: 8,
+        ease: 'easeOut',
       },
     },
   };
@@ -40,8 +44,33 @@ const Plan = () => {
     },
   };
 
+  function animate_svg_on_scroll(value) {
+    var pathLength1 = path1.current.getTotalLength(); // Getting the total length of the SVG path.
+    console.log('value', value - pathLength1);
+    path1.current.style.strokeDasharray = 100; // Get the starting position of the draw.
+    path1.current.style.strokeDashoffset = pathLength1;
+    var draw = pathLength1 * value;
+    path1.current.style.strokeDashoffset = pathLength1 - draw;
+  }
+  useEffect(() => {
+    const handleScroll = (event) => {
+      const value = window.scrollY / 1069;
+
+      animate_svg_on_scroll(value);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="texts w-[90%] text-white relative flex flex-col mx-auto items-center">
+    <div
+      id="challenges"
+      className="texts w-[90%] text-white relative flex flex-col mx-auto items-center"
+    >
       <h1 className="text-[50px]">DAY 01</h1>
       <svg
         ref={ref1}
@@ -49,11 +78,13 @@ const Plan = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 600 1200"
       >
-        <motion.path
-          variants={pathVariants}
+        {/*variants={pathVariants}
           initial="hidden"
-          animate={isInView1 && 'visible'}
-          className="theLine stroke-white text-black"
+  animate={isInView1 && 'visible'}*/}
+
+        <motion.path
+          ref={path1}
+          className="theLine path1  stroke-white text-black"
           d="M -5,0
            Q 450 230 300 450 
            T 130 750
@@ -68,11 +99,11 @@ const Plan = () => {
           animate="visible"
         >
           <text className="text01 fill-white" x="15" y="200">
-            11:00 PM
+            10h30 - 10h50
           </text>
 
           <text className="text01 title fill-white" x="350" y="200">
-            Presentation game dev
+            Welcome session
           </text>
           <circle
             className="ball  fill-[#db6724] ball02"
@@ -82,10 +113,10 @@ const Plan = () => {
           ></circle>
 
           <text className="text01 fill-white" x="15" y="400">
-            13:00 PM
+            11h20- 12h30
           </text>
           <text className="text01 title fill-white" x="370" y="400">
-            Presentation Ai tools
+            Game-dev fundamentals
           </text>
 
           <circle
@@ -95,11 +126,11 @@ const Plan = () => {
             cy="401"
           ></circle>
 
-          <text className="text01 fill-white" x="15" y="600">
-            15:00 PM
+          <text className="text01 fill-white" x="15" y="610">
+            13h10- 15h10
           </text>
-          <text className="text01 title fill-white" x="300" y="600">
-            WORKSHOP GAME DEV HAL THEME
+          <text className="text01 title fill-white" x="300" y="610">
+            Build a game in python
           </text>
 
           <circle
@@ -109,11 +140,11 @@ const Plan = () => {
             cy="601"
           ></circle>
 
-          <text className="text01 fill-white" x="15" y="800">
-            17:00 PM
+          <text className="text01 fill-white" x="15" y="810">
+            Break
           </text>
-          <text className="text01 title fill-white" x="300" y="800">
-            WORKSHOP AI generator
+          <text className="text01 title fill-white" x="300" y="810">
+            diverse activities
           </text>
 
           <circle
@@ -123,11 +154,11 @@ const Plan = () => {
             cy="801"
           ></circle>
 
-          <text className="text01 fill-white" x="15" y="1000">
-            17:00 PM
+          <text className="text01 fill-white" x="15" y="1010">
+            17h00
           </text>
-          <text className="text01 title fill-white" x="350" y="1000">
-            ENDING CEREMONY
+          <text className="text01 title fill-white" x="350" y="1010">
+            Closing of day 1
           </text>
 
           <circle
@@ -169,12 +200,12 @@ const Plan = () => {
           initial="hidden"
           animate="visible"
         >
-          <text className="text01 fill-white" x="15" y="200">
-            11:00 PM
+          <text className="text01 fill-white" x="15" y="210">
+            10h30 - 10h50
           </text>
 
-          <text className="text01 title fill-white" x="350" y="200">
-            Presentation game dev
+          <text className="text01 title fill-white" x="350" y="210">
+            Welcome session
           </text>
           <circle
             className="ball  fill-[#db6724] ball02"
@@ -183,11 +214,11 @@ const Plan = () => {
             cy="201"
           ></circle>
 
-          <text className=" text01 fill-white" x="15" y="400">
-            13:00 PM
+          <text className=" text01 fill-white" x="15" y="410">
+            11h20 - 13h30
           </text>
-          <text className="title text01 fill-white" x="370" y="400">
-            Presentation Ai tools
+          <text className="title text01 fill-white" x="370" y="410">
+            Artificial intelligence
           </text>
 
           <circle
@@ -197,11 +228,11 @@ const Plan = () => {
             cy="401"
           ></circle>
 
-          <text className="text01 fill-white" x="15" y="600">
-            15:00 PM
+          <text className="text01 fill-white" x="15" y="610">
+            14h10 -15h20
           </text>
-          <text className="text01 title fill-white" x="300" y="600">
-            WORKSHOP GAME DEV HAL THEME
+          <text className="text01 title fill-white" x="300" y="610">
+            VR & AR kickstart
           </text>
 
           <circle
@@ -211,11 +242,11 @@ const Plan = () => {
             cy="601"
           ></circle>
 
-          <text className="text01 fill-white" x="15" y="800">
-            17:00 PM
+          <text className="text01 fill-white" x="15" y="810">
+            15h20 ------- 16h
           </text>
-          <text className="text01 title fill-white" x="300" y="800">
-            WORKSHOP AI generator
+          <text className="text01 title fill-white" x="300" y="810">
+            VR & AR experience
           </text>
 
           <circle
@@ -225,11 +256,11 @@ const Plan = () => {
             cy="801"
           ></circle>
 
-          <text className="text01 fill-white" x="15" y="1000">
-            17:00 PM
+          <text className="text01 fill-white" x="15" y="1010">
+            17h00
           </text>
-          <text className="text01 title fill-white" x="350" y="1000">
-            ENDING CEREMONY
+          <text className="text01 title fill-white" x="350" y="1010">
+            Trick or Code Closing
           </text>
 
           <circle
