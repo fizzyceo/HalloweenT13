@@ -8,14 +8,17 @@ const Navbar = ({ selectedMenu }) => {
     <nav
       className={`py-3 px-8 fill-white  nav  flex justify-between items-center `}
     >
-      <a href=" nav__logo  " className="flex gap-2 justify-center items-center">
+      <a
+        href=" nav__logo  "
+        className="flex  gap-2 justify-center items-center"
+      >
         <img
-          src="img/logo-skull.png"
+          src="img/2.png"
           alt=""
-          className="inline-flex nav__logo w-10 h-10"
+          className="rounded-full inline-flex nav__logo w-12 h-12"
         />
 
-        <p className="font-bold text-lg">Halloween</p>
+        <p className="font-bold text-lg">Trick Or Code</p>
       </a>
       <div
         className={` nav__menu z-30  rounded-b-2xl py-2 ${
@@ -40,16 +43,6 @@ const Navbar = ({ selectedMenu }) => {
           >
             <a className="" href="#about">
               About
-            </a>
-          </li>
-
-          <li
-            className={`nav__item ${
-              selectedMenu === 'items' && 'text-[#ca5f21]'
-            }`}
-          >
-            <a className="" href="#items">
-              Items
             </a>
           </li>
 

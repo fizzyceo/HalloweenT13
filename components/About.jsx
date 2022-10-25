@@ -11,11 +11,12 @@ const About = () => {
         <h2 className="text-[40px]">
           ABOUT <span className="">TEAM 13</span>
         </h2>
-        <p className="py-3 text-center">
+        <p className="py-3 text-center ">
           We are one of the upcoming GDSC members, Our team is composed of 9
-          members : ilyes,manel,meriem,samy,Youssra,khawla,rami,mohammed managed
-          by the team leader <p className="font-bold">'Kennyxy'</p>
+          members : ilyes,manel,meriem,samy,Youssra,khawla, rami,mohammed
+          managed by the team leader
         </p>
+        <p className="font-bold">'Kennyxy'</p>
         <button className="rounded-full my-5  hover:text-[#fff] font-bold transition-all hover:bg-[#ca5f21] w-fit px-7  py-2 bg-[#fff] text-[#ca5f21]">
           CHECK US
         </button>

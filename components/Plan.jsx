@@ -46,7 +46,7 @@ const Plan = () => {
 
   function animate_svg_on_scroll(value) {
     var pathLength1 = path1.current.getTotalLength(); // Getting the total length of the SVG path.
-    console.log('value', value - pathLength1);
+
     path1.current.style.strokeDasharray = 100; // Get the starting position of the draw.
     path1.current.style.strokeDashoffset = pathLength1;
     var draw = pathLength1 * value;

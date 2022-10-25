@@ -5,7 +5,6 @@ const Section = ({ children, index, setSelectedMenu }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   if (isInView) {
-    console.log(index);
     setSelectedMenu(index);
   } else {
     setSelectedMenu('');

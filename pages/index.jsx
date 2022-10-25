@@ -8,6 +8,7 @@ import Section from '../components/Section';
 import { useAnimation, useInView, motion } from 'framer-motion';
 import About from '../components/About';
 import Plan from '../components/Plan';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const [navBg, setNavBg] = useState(false);
@@ -19,7 +20,6 @@ export default function Home() {
   const animate = useAnimation();
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    console.log(scrollY);
   }, []);
   const handleScroll = () => {
     if (window.scrollY > 75) {
@@ -79,7 +79,8 @@ export default function Home() {
           <Plan />
         </Section>
       </main>
-      <div></div>
+
+      <Footer />
     </div>
   );
 }
