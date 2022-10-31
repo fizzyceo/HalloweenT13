@@ -17,9 +17,12 @@ const About = () => {
           managed by the team leader
         </p>
         <p className="font-bold">'Kennyxy'</p>
-        <button className="rounded-full my-5  hover:text-[#fff] font-bold transition-all hover:bg-[#ca5f21] w-fit px-7  py-2 bg-[#fff] text-[#ca5f21]">
+        <a
+          href="#challenges"
+          className="rounded-full my-5  hover:text-[#fff] font-bold transition-all hover:bg-[#ca5f21] w-fit px-7  py-2 bg-[#fff] text-[#ca5f21]"
+        >
           CHECK US
-        </button>
+        </a>
       </div>
       <img
         src="img/about-scare.png"
